@@ -275,7 +275,6 @@ def paymenthandler(request):
                             quantity = i.quantity
                         )
                         product = Product.objects.get(id = i.product.id)
-                        print(product)
                         product.product_stock -= i.quantity
                         product.save()
                         i.delete()
@@ -300,10 +299,8 @@ def paymenthandler(request):
 def myorder(request):
     active(request)
     orders  = MyOrder.objects.filter(buyer = active_user)
-    print(orders)
     total_price = 0
     for i in orders:
-        print(i)
         total_price += i.product.price*i.quantity
     return render(request,'myorder.html',{'active_user':active_user,'orders' : orders,'total_price':total_price})
 

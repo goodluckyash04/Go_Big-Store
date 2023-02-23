@@ -61,6 +61,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="login-block">
           <form action="{% url 'seller_login' %}" method="post">
             {% csrf_token %}
+            {{msg}}
             <input type="text" name="email" placeholder="Email" required="" />
             <input
               type="password"

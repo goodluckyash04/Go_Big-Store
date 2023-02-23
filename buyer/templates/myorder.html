@@ -72,7 +72,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
             <th>Name</th>
             <th>Date</th>
             <th>Quantity</th>
-            <th>Total</th>
+            <th>Total(Rs.)</th>
             <th>Order Status</th>
           </tr>
     </thead>
@@ -103,15 +103,9 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
     {% endif %}
     <tr >
       <td></td>
-      <td><strong>Total</strong></td>
+      <td colspan=3><strong>Total</strong></td>
       <td><strong id="my-cart-grand-total">Rs {{total_price}}</strong></td>
       <td></td>
-      {% comment %} <td></td> {% endcomment %}
-      <td>
-        <button id="pay-btn"
-        class="btn btn-xs btn-info"
-        >Pay ₹{{total_price}}</button>
-      </td>
     </tr>
   </tbody>
 </table>
